@@ -50,7 +50,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\himaa\AppData\Local\Temp\testng-eclipse--1432914821\testng-customsuite.xml</span>
+                    <span>C:\Users\himaa\AppData\Local\Temp\testng-eclipse-487877129\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -92,7 +92,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">4 methods,   4 passed</span>
+                    <span class="method-stats">1 method,   1 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -103,22 +103,7 @@
                     <div class="method-list-content passed suite-Default_suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="testScript.LoginTest" class="method navigator-link" hash-for-method="verifyUserLoginWithInvalidCredential">verifyUserLoginWithInvalidCredential</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="testScript.LoginTest" class="method navigator-link" hash-for-method="verifyUserLoginWithInvalidUserNameAndValidPassword">verifyUserLoginWithInvalidUserNameAndValidPassword</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="testScript.LoginTest" class="method navigator-link" hash-for-method="verifyUserLoginWithValidCredential">verifyUserLoginWithValidCredential</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="testScript.LoginTest" class="method navigator-link" hash-for-method="verifyUserLoginWithValidUserNameAndInvalidPassword">verifyUserLoginWithValidUserNameAndInvalidPassword</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="testScript.AdminUsersTest" class="method navigator-link" hash-for-method="verifySearchingNewlyCreatedUser">verifySearchingNewlyCreatedUser</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -136,35 +121,14 @@
           <div class="suite-Default_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">testScript.LoginTest</span>
+              <span class="class-name">testScript.AdminUsersTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="verifyUserLoginWithInvalidCredential">
-                  </a> <!-- verifyUserLoginWithInvalidCredential -->
-                  <span class="method-name">verifyUserLoginWithInvalidCredential</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="verifyUserLoginWithInvalidUserNameAndValidPassword">
-                  </a> <!-- verifyUserLoginWithInvalidUserNameAndValidPassword -->
-                  <span class="method-name">verifyUserLoginWithInvalidUserNameAndValidPassword</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="verifyUserLoginWithValidCredential">
-                  </a> <!-- verifyUserLoginWithValidCredential -->
-                  <span class="method-name">verifyUserLoginWithValidCredential</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="verifyUserLoginWithValidUserNameAndInvalidPassword">
-                  </a> <!-- verifyUserLoginWithValidUserNameAndInvalidPassword -->
-                  <span class="method-name">verifyUserLoginWithValidUserNameAndInvalidPassword</span>
+                  <a name="verifySearchingNewlyCreatedUser">
+                  </a> <!-- verifySearchingNewlyCreatedUser -->
+                  <span class="method-name">verifySearchingNewlyCreatedUser</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -172,7 +136,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\himaa\AppData\Local\Temp\testng-eclipse--1432914821\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\himaa\AppData\Local\Temp\testng-eclipse-487877129\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -181,7 +145,11 @@
 &lt;suite name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;testScript.LoginTest&quot;/&gt;
+      &lt;class name=&quot;testScript.AdminUsersTest&quot;&gt;
+        &lt;methods&gt;
+          &lt;include name=&quot;verifySearchingNewlyCreatedUser&quot;/&gt;
+        &lt;/methods&gt;
+      &lt;/class&gt; &lt;!-- testScript.AdminUsersTest --&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -221,28 +189,16 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(4);
+data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'verifyUserLoginWithInvalidCredential')
-data.setCell(0, 2, 'testScript.LoginTest')
-data.setCell(0, 3, 1243);
-data.setCell(1, 0, 1)
-data.setCell(1, 1, 'verifyUserLoginWithInvalidUserNameAndValidPassword')
-data.setCell(1, 2, 'testScript.LoginTest')
-data.setCell(1, 3, 554);
-data.setCell(2, 0, 2)
-data.setCell(2, 1, 'verifyUserLoginWithValidUserNameAndInvalidPassword')
-data.setCell(2, 2, 'testScript.LoginTest')
-data.setCell(2, 3, 493);
-data.setCell(3, 0, 3)
-data.setCell(3, 1, 'verifyUserLoginWithValidCredential')
-data.setCell(3, 2, 'testScript.LoginTest')
-data.setCell(3, 3, 407);
+data.setCell(0, 1, 'verifySearchingNewlyCreatedUser')
+data.setCell(0, 2, 'testScript.AdminUsersTest')
+data.setCell(0, 3, 1576);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 2 seconds</span>
+              <span class="suite-total-time">Total running time: 1 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -257,9 +213,16 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">0 ignored methods</span>
+            <span class="header-content">1 ignored method</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">testScript.AdminUsersTest</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">verifyNewUserCreationInAdminUsers</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-Default_suite" class="panel">
@@ -268,54 +231,18 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">testScript.LoginTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">testScript.AdminUsersTest</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">initializeBrowser</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">verifyUserLoginWithInvalidCredential</span>
-                <span class="method-start">2266 ms</span>
+                <span class="method-name">verifySearchingNewlyCreatedUser</span>
+                <span class="method-start">1648 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">closeAndQuit</span>
-                <span class="method-start">3513 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">initializeBrowser</span>
-                <span class="method-start">3518 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">verifyUserLoginWithInvalidUserNameAndValidPassword</span>
-                <span class="method-start">5067 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">closeAndQuit</span>
-                <span class="method-start">5626 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">initializeBrowser</span>
-                <span class="method-start">5630 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">verifyUserLoginWithValidCredential</span>
-                <span class="method-start">7096 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">closeAndQuit</span>
-                <span class="method-start">7510 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">initializeBrowser</span>
-                <span class="method-start">7512 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">verifyUserLoginWithValidUserNameAndInvalidPassword</span>
-                <span class="method-start">9134 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">closeAndQuit</span>
-                <span class="method-start">9629 ms</span>
+                <span class="method-start">3227 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

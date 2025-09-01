@@ -18,10 +18,10 @@ public class HomePage {
 	private WebElement logoutMenu;
 	@FindBy(partialLinkText = "Logout")
 	private WebElement logout;
-	@FindBy(className = "login-box-msg")
-	private WebElement logoutConfirmMessage;
+	
 
-	public void clickLogoutMenu() {
+
+	public void clickOnAdminMenu() { 
 		logoutMenu.click();
 
 	}
@@ -29,14 +29,6 @@ public class HomePage {
 	public void clickLogout() {
 		logout.click();
 
-	}
-
-	public void verifyLogoutConfirmMessage() {
-
-		System.out.println(logoutConfirmMessage.getText());
-		if (logoutConfirmMessage.getText().contains("start your session")) {
-			System.out.println("User logged out successfully");
-		}
-	}
+	}	
 
 }

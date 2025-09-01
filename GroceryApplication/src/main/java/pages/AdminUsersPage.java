@@ -95,12 +95,6 @@ public class AdminUsersPage {
 		searchUser.click();
 	}
 
-	public void verifySearchUserResults() {
-		System.out.println(searchUserResult.getText());
-		if (searchUserResult.getText().equalsIgnoreCase(adminUserName)) {
-			System.out.println("New user searched successfully");
-		}
 
-	}
 
 }
