@@ -9,7 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
 public class AdminUsersPage {
-	public static String adminUserName = "SampleAdmin9";
+	public static String adminUserName = "SampleAdmin10";
 	public WebDriver driver;
 
 	public AdminUsersPage(WebDriver driver) {
@@ -17,7 +17,8 @@ public class AdminUsersPage {
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(xpath = "//section[@class='content']//a[@href='https://groceryapp.uniqassosiates.com/admin/list-admin']")
+	//@FindBy(xpath = "//section[@class='content']//a[@href='https://groceryapp.uniqassosiates.com/admin/list-admin']")
+	@FindBy(xpath = "//p[text()='Admin Users']/ancestor::div/a")
 	private WebElement adminUserPage;
 	@FindBy(xpath = "//section[@class='content']//a[contains(text(),'New')]")
 	private WebElement newButton;

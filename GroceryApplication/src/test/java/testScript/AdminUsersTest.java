@@ -11,7 +11,7 @@ import utilities.ExcelUtility;
 
 public class AdminUsersTest extends Base {
 
-	@Test
+	@Test(priority=5,description="Successful creation of a new Admin user")
 	public void verifyNewUserCreationInAdminUsers() throws IOException  {
 		String username = ExcelUtility.getStringData(1, 0, "Login"); 
 		String password = ExcelUtility.getStringData(1, 1, "Login"); 
@@ -33,7 +33,7 @@ public class AdminUsersTest extends Base {
 
 	}
 
-	@Test
+	@Test(priority=6,description="Successful Search of an Admin user")
 	public void verifySearchingNewlyCreatedUser() throws IOException {
 		String username = ExcelUtility.getStringData(1, 0, "Login"); 
 		String password = ExcelUtility.getStringData(1, 1, "Login"); 
