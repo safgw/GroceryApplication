@@ -9,7 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
 public class AdminUsersPage {
-	public static String adminUserName = "SampleAdmin10";
+	
 	public WebDriver driver;
 
 	public AdminUsersPage(WebDriver driver) {
@@ -51,12 +51,12 @@ public class AdminUsersPage {
 		newButton.click();
 	}
 
-	public void enterNewAdminUserName() {
+	public void enterNewAdminUserName(String adminUserName) {
 		admin1UserName.sendKeys(adminUserName);
 	}
 
-	public void enterNewAdminUserPassword() {
-		admin1Password.sendKeys("Password$");
+	public void enterNewAdminUserPassword(String adminUserPassword) {
+		admin1Password.sendKeys(adminUserPassword);
 	}
 
 	public void viewUserTypeDropdown() {
@@ -88,10 +88,11 @@ public class AdminUsersPage {
 
 	}
 
+	/*
 	public void enterTheUserNameToSearch() {
 		searchUserNameField.sendKeys(adminUserName);
 	}
-
+*/
 	public void clickSearchButton() {
 		searchUser.click();
 	}

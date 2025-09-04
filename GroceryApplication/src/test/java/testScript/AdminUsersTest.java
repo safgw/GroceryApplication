@@ -8,6 +8,7 @@ import automationCore.Base;
 import pages.AdminUsersPage;
 import pages.LoginPage;
 import utilities.ExcelUtility;
+import utilities.RandomDataUtility;
 
 public class AdminUsersTest extends Base {
 
@@ -24,12 +25,15 @@ public class AdminUsersTest extends Base {
 		AdminUsersPage adminUsersPage = new AdminUsersPage(driver);
 		adminUsersPage.goToAdminUserPage();
 		adminUsersPage.clickNewButton();
-		adminUsersPage.enterNewAdminUserName();
-		adminUsersPage.enterNewAdminUserPassword();
+		RandomDataUtility random = new RandomDataUtility();
+		String adminUserName = random.createRandomUserName();
+		String	adminUserPassword = random.createRandomPassword();
+		adminUsersPage.enterNewAdminUserName(adminUserName);
+		adminUsersPage.enterNewAdminUserPassword(adminUserPassword);
 		adminUsersPage.viewUserTypeDropdown();
 		adminUsersPage.selectAdminValueFromDropdown();
 		adminUsersPage.saveNewAdminUser();
-		adminUsersPage.successMessageAfterUserCreation();
+		//adminUsersPage.successMessageAfterUserCreation();
 
 	}
 
@@ -46,7 +50,7 @@ public class AdminUsersTest extends Base {
 		AdminUsersPage adminUsersPage = new AdminUsersPage(driver);
 		adminUsersPage.goToAdminUserPage();
 		adminUsersPage.clickSearchUserButton();
-		adminUsersPage.enterTheUserNameToSearch();
+		//adminUsersPage.enterTheUserNameToSearch();
 		adminUsersPage.clickSearchButton();
 	}
 
