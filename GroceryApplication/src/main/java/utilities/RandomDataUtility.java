@@ -33,7 +33,10 @@ public class RandomDataUtility {
 				
 	}
 	
-	
+	public String createRandomNews()
+	{
+		return faker.lorem().sentence();
+	}
 	
 
 }

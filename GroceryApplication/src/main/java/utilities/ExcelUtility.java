@@ -24,6 +24,10 @@ public class ExcelUtility
 		f=new FileInputStream("C:\\Users\\himaa\\eclipse-workspace\\GroceryApplication\\src\\test\\resources\\MainProjectTestData.xlsx"); 
 		w=new XSSFWorkbook(f); // gets the name of the file from f
 		s=w.getSheet(sheetName);// gets the name of the sheet from w
+		s = w.getSheet(sheetName);
+		if (s == null) {
+		    throw new RuntimeException("Sheet with name '" + sheetName + "' not found in Excel file.");
+		}
 		XSSFRow r=s.getRow(a);
 		XSSFCell c=r.getCell(b);
 		return c.getStringCellValue(); //inbuilt method for excelsheet connection
@@ -43,5 +47,6 @@ public class ExcelUtility
 		
 		// if we comment out 45 and return String.valueOf(c) and execute the pgm, the int value has xxxx.0;
 	}
+	
 
 }

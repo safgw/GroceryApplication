@@ -13,7 +13,7 @@ import utilities.RandomDataUtility;
 public class AdminUsersTest extends Base {
 
 	@Test(priority=5,description="Successful creation of a new Admin user")
-	public void verifyNewUserCreationInAdminUsers() throws IOException  {
+	public void verifyNewUserCreationInAdminUsersPage() throws IOException  {
 		String username = ExcelUtility.getStringData(1, 0, "Login"); 
 		String password = ExcelUtility.getStringData(1, 1, "Login"); 
 
@@ -25,6 +25,7 @@ public class AdminUsersTest extends Base {
 		AdminUsersPage adminUsersPage = new AdminUsersPage(driver);
 		adminUsersPage.goToAdminUserPage();
 		adminUsersPage.clickNewButton();
+		
 		RandomDataUtility random = new RandomDataUtility();
 		String adminUserName = random.createRandomUserName();
 		String	adminUserPassword = random.createRandomPassword();
@@ -33,7 +34,6 @@ public class AdminUsersTest extends Base {
 		adminUsersPage.viewUserTypeDropdown();
 		adminUsersPage.selectAdminValueFromDropdown();
 		adminUsersPage.saveNewAdminUser();
-		//adminUsersPage.successMessageAfterUserCreation();
 
 	}
 

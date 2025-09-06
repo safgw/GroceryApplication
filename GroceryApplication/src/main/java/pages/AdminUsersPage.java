@@ -75,13 +75,6 @@ public class AdminUsersPage {
 		saveUser.click();
 	}
 
-	public void successMessageAfterUserCreation() {
-		System.out.println(successMessage.getText());
-		if (successMessage.getText().contains("Successfully")) {
-			System.out.println("New user created successfully");
-		}
-
-	}
 
 	public void clickSearchUserButton() {
 		search.click();
