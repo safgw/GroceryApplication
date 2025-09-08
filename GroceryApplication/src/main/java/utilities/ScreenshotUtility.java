@@ -11,27 +11,30 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.io.FileHandler;
 
 public class ScreenshotUtility {
-	
-	//Any name can be given for the method
+
+	// Any name can be given for the method
 	public void getScreenshot(WebDriver driver, String failedTestCase) throws IOException {
 
 		TakesScreenshot scrShot = (TakesScreenshot) driver;
-		File screenShot = scrShot.getScreenshotAs(OutputType.FILE); //In brackets - where the screenshots need to be saved
+		File screenShot = scrShot.getScreenshotAs(OutputType.FILE); // In brackets - where the screenshots need to be
+																	// saved
 
-		String timeStamp = new SimpleDateFormat("dd_MM_yyyy_hh_mm_ss").format(new Date()); // used to differentiate the screenshots captured at different times
+		String timeStamp = new SimpleDateFormat("dd_MM_yyyy_hh_mm_ss").format(new Date()); // used to differentiate the
+																							// screenshots captured at
+																							// different times
 
 		File f1 = new File(System.getProperty("user.dir") + "//OutputScreenShot");// create file in directory
 		if (!f1.exists()) {
 
-		f1.mkdirs(); //forcefully create a folder incase the above one  Line 19 fails
+			f1.mkdirs(); // forcefully create a folder incase the above one Line 19 fails
 		}
 		String destination = System.getProperty("user.dir") + "//outputScreenShot//" + failedTestCase + timeStamp
-		+ ".png"; //outputScreenShot - folder Name, 
+				+ ".png"; // outputScreenShot - folder Name,
 		// String destination = f1.getPath() + "//" + failedTestCase + timeStamp +
 		// ".png";
 
 		File finalDestination = new File(destination);
 		FileHandler.copy(screenShot, finalDestination);
-		}
+	}
 
 }

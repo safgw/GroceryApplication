@@ -4,39 +4,33 @@ import com.github.javafaker.Faker;
 
 public class RandomDataUtility {
 	Faker faker = new Faker();
-	
-	public String createRandomUserName()
-	{
+
+	public String createRandomUserName() {
 		return faker.name().username();
 	}
-	
-	public String createRandomPassword()
-	{
+
+	public String createRandomPassword() {
 		return faker.internet().password();
 	}
-	
-	public String createRandomEmail()
-	{
-		return faker.internet().emailAddress();	
-		
+
+	public String createRandomEmail() {
+		return faker.internet().emailAddress();
+
 	}
-	
-	public String createRandomFullName()
-	{
+
+	public String createRandomFullName() {
 		return faker.name().fullName();
-		
+
 	}
-	
-	public String createRandomPhoneNumber()
-	{
+
+	public String createRandomPhoneNumber() {
 		return faker.phoneNumber().cellPhone();
-				
+
 	}
-	
-	public String createRandomNews()
-	{
-		return faker.lorem().sentence();
+
+	public String createRandomNews() {
+		// return faker.lorem().sentence();
+		return faker.company().catchPhrase();
 	}
-	
 
 }

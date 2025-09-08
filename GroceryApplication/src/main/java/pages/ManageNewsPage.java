@@ -13,60 +13,54 @@ public class ManageNewsPage {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
-	
-	
-	@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/list-news' and text()='More info ']") private WebElement manageNewsPage;
-	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/news/add']") private WebElement newNews;
-	@FindBy(id="news") private WebElement enterNewsContent;
-	@FindBy(name="create") private WebElement saveNewsContent;
-	@FindBy(partialLinkText = "Search") private WebElement searchNews;
-	@FindBy(name="un") private WebElement enterSearchNewsContent;
-	@FindBy(name="Search") private WebElement searchButton;
-	@FindBy(partialLinkText = "Reset") private WebElement resetNews;
 
-	
-	
-	public void goToManageNewsPage()
-	{
+	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/list-news' and text()='More info ']")
+	private WebElement manageNewsPage;
+	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/news/add']")
+	private WebElement newNews;
+	@FindBy(id = "news")
+	private WebElement enterNewsContent;
+	@FindBy(name = "create")
+	private WebElement saveNewsContent;
+	@FindBy(partialLinkText = "Search")
+	private WebElement searchNews;
+	@FindBy(name = "un")
+	private WebElement enterSearchNewsContent;
+	@FindBy(name = "Search")
+	private WebElement searchButton;
+	@FindBy(partialLinkText = "Reset")
+	private WebElement resetNews;
+
+	public void goToManageNewsPage() {
 		manageNewsPage.click();
 	}
-	
-	public void clickOnNewNewsButton()
-	{
+
+	public void clickOnNewNewsButton() {
 		newNews.click();
 	}
-	
-	public void enterTheNewsContent(String randomNewsContent)
-	{
+
+	public void enterTheNewsContent(String randomNewsContent) {
 		enterNewsContent.sendKeys(randomNewsContent);
 	}
-	
-	public void saveNewNewsContent()
-	{
+
+	public void saveNewNewsContent() {
 		saveNewsContent.click();
 	}
-		
-	
-	public void clickOnSearchNewsButton()
-	{
+
+	public void clickOnSearchNewsButton() {
 		searchNews.click();
 	}
-	
-	public void enterTheSearchNewsContent(String newsContent)
-	{
+
+	public void enterTheSearchNewsContent(String newsContent) {
 		enterSearchNewsContent.sendKeys(newsContent);
 	}
-	
-	
-	public void clickOnSearchButton()
-	{
+
+	public void clickOnSearchButton() {
 		searchButton.click();
 	}
-	
-	public void clickOnResetNewsButton()
-	{
+
+	public void clickOnResetNewsButton() {
 		resetNews.click();
 	}
-	
-	
+
 }

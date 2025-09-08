@@ -8,7 +8,7 @@ import utilities.ExcelUtility;
 
 public class LoginTest extends Base {
 
-	@Test(priority=1,description="Successful User Login with valid credentials")
+	@Test(priority = 1, description = "Successful User Login with valid credentials")
 	public void verifyUserLoginWithValidCredential() throws IOException {
 		String username = ExcelUtility.getStringData(1, 0, "Login"); // Reading userName from Excel
 		String password = ExcelUtility.getStringData(1, 1, "Login"); // Reading password from Excel
@@ -20,11 +20,11 @@ public class LoginTest extends Base {
 
 	}
 
-	@Test(priority=2,description="User Login fails with Invalid Username and Valid Password")
+	@Test(priority = 2, description = "User Login fails with Invalid Username and Valid Password")
 	public void verifyUserLoginWithInvalidUserNameAndValidPassword() throws IOException {
 
-		String username = ExcelUtility.getStringData(2, 0, "Login"); 
-		String password = ExcelUtility.getStringData(2, 1, "Login"); 
+		String username = ExcelUtility.getStringData(2, 0, "Login");
+		String password = ExcelUtility.getStringData(2, 1, "Login");
 
 		LoginPage loginPage = new LoginPage(driver);
 		loginPage.enterUserNameOnUserNameField(username);
@@ -33,7 +33,7 @@ public class LoginTest extends Base {
 
 	}
 
-	@Test(priority=3,description="User Login fails  with Valid Username and Invalid Password")
+	@Test(priority = 3, description = "User Login fails  with Valid Username and Invalid Password")
 	public void verifyUserLoginWithValidUserNameAndInvalidPassword() throws IOException {
 
 		String username = ExcelUtility.getStringData(3, 0, "Login"); // Reading userName from Excel
@@ -46,7 +46,7 @@ public class LoginTest extends Base {
 
 	}
 
-	@Test(priority=4,description="User Login fails with Invalid credentials")
+	@Test(priority = 4, description = "User Login fails with Invalid credentials")
 	public void verifyUserLoginWithInvalidCredential() throws IOException {
 
 		String username = ExcelUtility.getStringData(4, 0, "Login"); // Reading userName from Excel

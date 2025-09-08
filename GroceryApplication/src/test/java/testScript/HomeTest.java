@@ -11,11 +11,11 @@ import utilities.ExcelUtility;
 
 public class HomeTest extends Base {
 
-	@Test(priority=7,description="Successful log out of the user")
+	@Test(priority = 7, description = "Successful log out of the user")
 	public void verifyUserCanSuccessfullyLogout() throws IOException, AWTException {
 
-		String username = ExcelUtility.getStringData(1, 0, "Login"); 
-		String password = ExcelUtility.getStringData(1, 1, "Login"); 
+		String username = ExcelUtility.getStringData(1, 0, "Login");
+		String password = ExcelUtility.getStringData(1, 1, "Login");
 
 		LoginPage loginPage = new LoginPage(driver);
 		loginPage.enterUserNameOnUserNameField(username);

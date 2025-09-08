@@ -18,10 +18,8 @@ public class HomePage {
 	private WebElement logoutMenu;
 	@FindBy(partialLinkText = "Logout")
 	private WebElement logout;
-	
 
-
-	public void clickOnAdminMenu() { 
+	public void clickOnAdminMenu() {
 		logoutMenu.click();
 
 	}
@@ -29,6 +27,6 @@ public class HomePage {
 	public void clickLogout() {
 		logout.click();
 
-	}	
+	}
 
 }
