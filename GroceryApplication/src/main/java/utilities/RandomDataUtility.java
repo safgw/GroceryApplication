@@ -7,6 +7,7 @@ public class RandomDataUtility {
 
 	public String createRandomUserName() {
 		return faker.name().username();
+		
 	}
 
 	public String createRandomPassword() {

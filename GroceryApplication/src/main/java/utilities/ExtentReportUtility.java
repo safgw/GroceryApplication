@@ -3,7 +3,7 @@ package utilities;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
-public class extentReportUtility {
+public class ExtentReportUtility {
 
 	public static final ExtentReports extentReports = new ExtentReports();// static instance of extentreports that can
 	// be shared accross the application
