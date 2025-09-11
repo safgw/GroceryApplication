@@ -1,3 +1,9 @@
+/*
+ This code defines a TestNG listener using the ITestListener interface to integrate 
+ExtentReports with Selenium WebDriver tests. It tracks test execution events 
+(start, success, failure, etc.) and logs them in a structured report format.
+*/
+
 package reportGeneration;
 
 import org.openqa.selenium.WebDriver;
@@ -12,11 +18,11 @@ import com.aventstack.extentreports.Status;
 import automationCore.Base;
 import utilities.ExtentReportUtility;
 
-public class Listeners extends Base implements ITestListener {
-
+public class Listeners extends Base implements ITestListener {//ITestListener interface to integrate ExtentReports with Selenium WebDriver tests
+	
 	ExtentTest test;
 	ExtentReports extent = ExtentReportUtility.createExtentReports();
-	ThreadLocal<ExtentTest> extentTest = new ThreadLocal<ExtentTest>();
+	ThreadLocal<ExtentTest> extentTest = new ThreadLocal<ExtentTest>(); //Ensures that ExtentTest objects are thread-safe, useful when tests run in parallel.
 
 	public void onTestStart(ITestResult result) {
 

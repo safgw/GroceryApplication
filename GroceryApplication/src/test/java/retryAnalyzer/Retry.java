@@ -1,0 +1,42 @@
+package retryAnalyzer;
+
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.testng.IRetryAnalyzer;
+import org.testng.ITestResult;
+
+public class Retry implements IRetryAnalyzer{
+	private static final Logger LOG = (Logger) LogManager.getLogger("Retry.class");
+	private static final int maxTry = 2; //give any name for maxTry ; In this case reexecuted twice
+	private int count = 0; // tracks how many re executions; acts like a counter
+
+	@Override
+	public boolean retry(final ITestResult iTestResult) {  //retry - method in the Interface
+	if (!iTestResult.isSuccess()) {
+	if (this.count < maxTry) {
+	LOG.info("Retrying test " + iTestResult.getName() + " with status "
+	+ getResultStatusName(iTestResult.getStatus()) + " for the " + (this.count + 1) + " time(s).");
+	this.count++;
+	return true;
+	}
+	}
+	return false;
+	}
+
+	public String getResultStatusName(final int status) {
+	String resultName = null;
+	if (status == 1) {
+	resultName = "SUCCESS";
+	}
+	if (status == 2) {
+	resultName = "FAILURE";
+	}
+	if (status == 3) {
+	resultName = "SKIP";
+	}
+	return resultName;
+	}
+	
+
+}

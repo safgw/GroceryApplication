@@ -2,9 +2,11 @@ package testScript;
 
 import java.io.IOException;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import automationCore.Base;
+import constants.Constant;
 import pages.AdminUsersPage;
 import pages.LoginPage;
 import utilities.ExcelUtility;
@@ -35,10 +37,13 @@ public class AdminUsersTest extends Base {
 		adminUsersPage.viewUserTypeDropdown();
 		adminUsersPage.selectAdminValueFromDropdown();
 		adminUsersPage.saveNewAdminUser();
+		
+		boolean userCreatoinSuccess = adminUsersPage.successfulUserCreation();
+		Assert.assertTrue(userCreatoinSuccess,Constant.USERCREATIONFAILED);
 
 	}
 
-	@Test(priority = 6, description = "Successful Search of an Admin user")
+	@Test(priority = 6, description = "Successful Search of an Admin user",retryAnalyzer=retryAnalyzer.Retry.class)
 	public void verifySearchingNewlyCreatedUser() throws IOException {
 		String username = ExcelUtility.getStringData(1, 0, "Login");
 		String password = ExcelUtility.getStringData(1, 1, "Login");
@@ -55,6 +60,11 @@ public class AdminUsersTest extends Base {
 		String username1 = ExcelUtility.getStringData(1, 0, "AdminCredentials");
 		adminUsersPage.enterTheUserNameToSearch(username1);
 		adminUsersPage.clickSearchButton();
+		
+		String userSearchResult = adminUsersPage.userSearchResults();
+		Assert.assertEquals(userSearchResult,username1,Constant.USERNOTFOUND);
+		
+		
 	}
 
 }

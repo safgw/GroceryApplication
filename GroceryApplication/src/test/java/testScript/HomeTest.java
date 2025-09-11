@@ -2,9 +2,12 @@ package testScript;
 
 import java.awt.AWTException;
 import java.io.IOException;
+
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import automationCore.Base;
+import constants.Constant;
 import pages.HomePage;
 import pages.LoginPage;
 import utilities.ExcelUtility;
@@ -25,6 +28,9 @@ public class HomeTest extends Base {
 		HomePage homePage = new HomePage(driver);
 		homePage.clickOnAdminMenu();
 		homePage.clickLogout();
+		
+		boolean loggedOutPage = homePage.userLoggedOut();
+		Assert.assertTrue(loggedOutPage,Constant.USERNOTLOGGEDOUT);
 
 	}
 

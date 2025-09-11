@@ -6,7 +6,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class AdminUsersPage {
 
@@ -41,8 +43,11 @@ public class AdminUsersPage {
 	private WebElement searchUserNameField;
 	@FindBy(name = "Search")
 	private WebElement searchUser;
-	@FindBy(xpath = "//table[contains(@class,'table-bordered')]/tbody/tr[1]/td[1]")
+	@FindBy(xpath = "//div[contains(@class, 'alert-success') and contains(., 'User Created Successfully')]")
+	private WebElement userCreateSuccessAlert;
+	@FindBy(xpath = "//table//tbody//tr[1]//td[1]")
 	private WebElement searchUserResult;
+	
 
 	public void goToAdminUserPage() {
 		adminUserPage.click();
@@ -67,8 +72,6 @@ public class AdminUsersPage {
 	public void selectAdminValueFromDropdown() {
 
 		Select select = new Select(userType);
-		// WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
-		// wait.until(ExpectedConditions.elementToBeSelected(adminType));
 		select.selectByValue("admin");
 	}
 
@@ -87,6 +90,19 @@ public class AdminUsersPage {
 
 	public void clickSearchButton() {
 		searchUser.click();
+	}
+	
+	
+	public boolean successfulUserCreation()
+	{
+		return userCreateSuccessAlert.isDisplayed();
+	}
+	
+	public String userSearchResults()
+	{
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(2));
+		wait.until(ExpectedConditions.visibilityOf(searchUserResult));
+		return searchUserResult.getText();
 	}
 
 }

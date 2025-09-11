@@ -1,16 +1,20 @@
 package testScript;
 
 import java.io.IOException;
+import java.time.Duration;
 
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import automationCore.Base;
+import constants.Constant;
 import pages.LoginPage;
 import utilities.ExcelUtility;
 
 public class LoginTest extends Base {
 
-	@Test(priority = 1, description = "Successful User Login with valid credentials")
+	@Test(priority = 1, description = "Successful User Login with valid credentials",groups={"smoke"},retryAnalyzer=retryAnalyzer.Retry.class)//package Name.methodName.class extension
 	public void verifyUserLoginWithValidCredential() throws IOException {
 		String username = ExcelUtility.getStringData(1, 0, "Login"); // Reading userName from Excel
 		String password = ExcelUtility.getStringData(1, 1, "Login"); // Reading password from Excel
@@ -21,7 +25,7 @@ public class LoginTest extends Base {
 		loginPage.clickOnLoginButton();
 		
 		boolean dashboardDisplay = loginPage.isDashboardDisplayed();
-		Assert.assertTrue(dashboardDisplay,"User couldn't login with valid credential");
+		Assert.assertTrue(dashboardDisplay,Constant.VALIDCREDENTIALERROR);
 
 	}
 
@@ -36,9 +40,11 @@ public class LoginTest extends Base {
 		loginPage.enterPasswordOnPasswordField(password);
 		loginPage.clickOnLoginButton();
 		
+		
+ 
 		String expected = "7rmart supermarket";
 		String actual = loginPage.getTitleText();
-		Assert.assertEquals(actual, expected, "User is able to login with Invalid username");
+		Assert.assertEquals(actual, expected, Constant.INVALIDNAMEERROR);
 
 	}
 
@@ -52,10 +58,14 @@ public class LoginTest extends Base {
 		loginPage.enterUserNameOnUserNameField(username);
 		loginPage.enterPasswordOnPasswordField(password);
 		loginPage.clickOnLoginButton();
+		
+		String expected = "7rmart supermarket";
+		String actual = loginPage.getTitleText();
+		Assert.assertEquals(actual, expected, Constant.INVALIDPASSWORDERROR);
 
 	}
 
-	@Test(priority = 4, description = "User Login fails with Invalid credentials")
+	@Test(priority = 4, description = "User Login fails with Invalid credentials",groups={"smoke"})
 	public void verifyUserLoginWithInvalidCredential() throws IOException {
 
 		String username = ExcelUtility.getStringData(4, 0, "Login"); // Reading userName from Excel
@@ -65,6 +75,10 @@ public class LoginTest extends Base {
 		loginPage.enterUserNameOnUserNameField(username);
 		loginPage.enterPasswordOnPasswordField(password);
 		loginPage.clickOnLoginButton();
+		
+		String expected = "7rmart supermarket";
+		String actual = loginPage.getTitleText();
+		Assert.assertEquals(actual, expected, Constant.INVALIDCREDENTIALERROR);
 
 	}
 
