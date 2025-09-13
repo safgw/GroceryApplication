@@ -5,7 +5,7 @@
     <listener class-name="reportGeneration.Listeners"/>
   </listeners>
   <test thread-count="5" name="Test(failed)">
-    <parameter name="browser" value="chrome"/>
+    <parameter name="browser" value="headlesschrome"/>
     <classes>
       <class name="testScript.AdminUsersTest">
         <methods>

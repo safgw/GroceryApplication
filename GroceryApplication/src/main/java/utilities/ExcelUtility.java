@@ -8,6 +8,8 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
+import constants.Constant;
+
 public class ExcelUtility {
 	static FileInputStream f; // excel file path
 	static XSSFWorkbook w; // Filename
@@ -21,8 +23,7 @@ public class ExcelUtility {
 	public static String getStringData(int a, int b, String sheetName) throws IOException // a is row ,b is column or
 																							// cell
 	{
-		f = new FileInputStream(
-				"C:\\Users\\himaa\\git\\GroceryApplication\\GroceryApplication\\src\\test\\resources\\MainProjectTestData.xlsx");
+		f = new FileInputStream(Constant.EXCELPATH);
 		w = new XSSFWorkbook(f); // gets the name of the file from f
 		s = w.getSheet(sheetName);// gets the name of the sheet from w
 		if (s == null) {
@@ -38,8 +39,7 @@ public class ExcelUtility {
 	// because the exact value is returned. Otherwse .0 will be added towards the
 	// end of numbers
 	public static String getIntegerData(int a, int b, String sheetName) throws IOException {
-		f = new FileInputStream(
-				"C:\\Users\\himaa\\git\\GroceryApplication\\GroceryApplication\\src\\test\\resources\\MainProjectTestData.xlsx");
+		f = new FileInputStream(Constant.EXCELPATH);
 		w = new XSSFWorkbook(f);
 		s = w.getSheet(sheetName);
 		XSSFRow r = s.getRow(a);

@@ -11,5 +11,6 @@ public class Constant {
 	public static final String USERNOTLOGGEDOUT = "User is not logged out";
 	public static final String USERCREATIONFAILED = "User creation failed";
 	public static final String USERNOTFOUND = "User not found";	
-
+	public static final String EXCELPATH = System.getProperty("user.dir")+"\\src\\test\\resources\\MainProjectTestData.xlsx";//This denotes the local path
+	public static final String CONFIGFILE =  System.getProperty("user.dir")+"\\src\\main\\resources\\Config.properties.properties";
 }

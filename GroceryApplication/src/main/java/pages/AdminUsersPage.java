@@ -73,7 +73,7 @@ public class AdminUsersPage {
 
 		Select select = new Select(userType);
 		select.selectByValue("admin");
-	}
+		}
 
 	public void saveNewAdminUser() {
 		saveUser.click();
